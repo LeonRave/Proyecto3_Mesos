@@ -14,7 +14,7 @@ En este archivo se detalla la instalacion de mesos, los errores comunes al usar 
     sudo yum -y install mesosphere-zookeeper
 
 
-## Confieguracion
+## Configuracion
 
     # En cada master
     sudo vim /etc/mesos/zk
