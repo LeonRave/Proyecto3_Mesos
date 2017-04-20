@@ -101,25 +101,33 @@ En este archivo se detalla la instalacion de mesos, los errores comunes al usar 
 
     Para ejecutar en mesos se tiene el JSON con diferentes configuraciones:
 	app1.json
-        app2.json
-        app3.json
+	app2.json
+	app3.json
+	app4.json
 
     Para ejecutar hacer la peticion con el JSOn se uso el comando:
 
 	curl -X POST http://10.110.70.45:8080/v2/apps -d @app1.json -H "Content-type: application/json"
 	curl -X POST http://10.110.70.45:8080/v2/apps -d @app2.json -H "Content-type: application/json"
 	curl -X POST http://10.110.70.45:8080/v2/apps -d @app3.json -H "Content-type: application/json"
+	curl -X POST http://10.110.70.45:8080/v2/apps -d @app4.json -H "Content-type: application/json"
 
 ## Resultados
 
 	Test            CPU            Memory            instances            time        
 
-        app1             2               100                 1
+	app1             2               100                 1                 33 s
 
-        app2             1                50                 1
+	app2             1                50                 1                 18 s
 
-        app3             1                50                 2
+	app3             1                50                 2                 17 s
+
+	app4             3              1000	             3                 15 s
 
 	local            -                 -                 -                 38 s
 
-
+Se puede observar al hacer pruebas que no se pueden asignar recursos que superan las capacidades de los nodos disponibles. 
+Al no haber un nodo con esas capacidades simplemente se queda esperando recursos para la realizacion del job.
+Cada que finaliza el job, mesos vuelve a iniciar el proceso.
+Todos los log de errores, resultados y archivos pueden ser vizualizados en el dashboard de mesos en este caso en: http:10.110.70.45:5050
+Los log son muy utiles para observar el comportamiento del job, pues permite ver resultados o errores.
