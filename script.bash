@@ -1,5 +1,7 @@
 a=1
 
+inicio=`date +%s`
+
 while [ $a -le 1000000 ]
 do
         echo $a

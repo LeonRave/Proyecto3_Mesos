@@ -1,3 +1,8 @@
+#!/bin/sh
+
+
+inicio=`date +%s`
+
 a=1
 
 while [ $a -le 1000000 ]
@@ -12,4 +17,4 @@ fin=`date +%s`
 let total=$fin-$inicio
 
 echo "ha tardado: $total segundos"
-
+~                                      

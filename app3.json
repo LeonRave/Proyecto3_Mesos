@@ -1,0 +1,11 @@
+{
+    "id": "leon3",
+    "cmd":"bash script.bash",
+    "cpus": 1.0,
+    "mem": 100.0,
+    "instances": 2,
+    "uris": [
+        "https://raw.githubusercontent.com/LeonRave/mesos/master/script.bash"
+    ]
+
+}
